@@ -19,4 +19,4 @@ jobs:
         environment_name: MyApplication-Environment
         version_label: 12345
         region: us-west-2
-        deployment_package: target/maven-standalone-app.jar
+        deployment_package: target/maven-standalone-application.jar
