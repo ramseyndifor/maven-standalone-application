@@ -1,0 +1,22 @@
+name: Deploy master
+on:
+  push:
+    branches:
+    - master
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+      
+    - name: Beanstalk Deploy for JAR
+      uses: DylanBDev/beanstalk-deploy@initial
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+        application_name: MyApplicationName
+        environment_name: MyApplication-Environment
+        version_label: 12345
+        region: us-west-2
+        deployment_package: target/maven-standalone-app.jar
